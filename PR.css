@@ -1,0 +1,495 @@
+
+/* CSS created by Emma Cheney. This cannot be copied unless permission is gained. */
+
+* { margin: 0; padding: 0; font-size: 18px; font-family: "Wingdings", sans-serif; background-color: #fee2b5;
+}
+
+/* General */
+
+html, body {
+	height: 100%;
+}
+
+body {
+	width: 1000px;
+	margin: auto;
+}
+
+p {
+	color: #4a4439;
+	margin-top: 10px;
+	font-family: "KG Miss Kindergarten", Georgia, Serif;
+	font-size: 1em;
+	text-align: center;
+}
+
+a {
+	font-family: "KG Miss Kindergarten", Georgia, Serif;
+}
+
+readonly {
+	background-color: grey;
+}
+
+strong {
+	font-family: "KG Miss Kindergarten", Georgia, Serif;
+}
+
+textarea {
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	background-color: white;
+	text-indent: 10px;
+}
+
+#lessons {
+	text-align: left;
+}
+
+/*label {
+	width: 10px;
+	background-color: white;
+}*/
+
+input {
+	margin-left: 10px;
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px;
+	margin-bottom: 5px;
+	background-color: white;
+	color: #ff6669;
+	border-style: none;
+	margin: 0;
+	padding: 0;
+	transition: all .3s;
+}
+
+
+td {
+	font-family: "KG Miss Kindergarten", Georgia, Serif;
+	color: #4a4439;
+	padding: 5px;
+}
+
+#container {
+    margin-left: 250px;
+	margin-right: 250px;
+	margin-top: 40px;
+}
+
+#search {
+	margin-top: 20px;
+}
+
+#echotext {
+	color: red;
+}
+
+input[type="submit"] {
+	background: #ff6669;
+	color: white;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 120px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background: #fee2b5;
+	color: #4a4439;
+	cursor: pointer;
+}
+
+#termsofuse p, ol, ul, li {
+	text-align: left;
+	font-family: Arial;
+	color: #4a4439;
+	font-size: 16px;
+}
+
+
+#termsofuse h3 {
+	text-align: left;
+	font-family: Arial;
+	font-size: 16px;
+}
+
+/* Navigation Bar */
+
+ul {
+	padding: 15px;
+/*	list-style-type:none;*/
+}
+
+.fnav {
+	margin-top: 10px;
+}
+
+.flink {
+	font-size: 0.8em;
+	padding: 15px;
+	color: ##4a4439;
+}
+
+/* Header */
+
+.title {
+	color: #ff6669;
+	font-family: "Lobster 1.4", sans-serif;
+	font-size: 4em;
+	text-align: center;
+	margin-top: 10px;
+}
+
+/* Graphics */
+
+.placeholder {
+	height: 50%;
+	width: 100%;
+	margin-top: 20px;
+}
+
+#imageleft {
+	float: left;
+	margin-top: 10px;
+}
+
+#imageright {
+	float: right;
+	margin-top: 10px;
+}
+
+#imagecenter {
+	margin: 0 auto;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#imageleft1 {
+	float: left;
+	margin-top: 75px;
+}
+
+#imageright1 {
+	float: right;
+	margin-top: 75px;
+}
+
+#imagecenter1 {
+	margin: 0 auto;
+	display: inline-block;
+	margin-top: 75px;
+}
+
+.icontext {
+	width: 200px;
+	margin-left: 50px;
+}
+/* Contact Page */
+
+#contactleft {
+	float: left;
+}
+
+#contactright {
+	float: right;
+}
+
+.pagecontent_contact_left {
+	width: 463px;
+	height: 420px;
+	margin: 10px 5px 10px 10px;
+	padding: 10px 10px 5px 10px;
+	font-size: 12px;
+	line-height: 10px;
+	text-align: center;
+}
+
+.pagecontent_contact_right_top {
+	width: 463px;
+	height: 140px;
+	margin: 10px 10px 10px 5px;
+	padding: 10px 10px 5px 10px;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+}
+
+/*.pagecontent_contact_right_top li {
+
+	list-style-type: circle;
+}*/
+
+.pagecontent_contact_right {
+	width: 463px;
+	height: 255px;
+	margin: 10px 10px 10px 5px;
+	padding: 20px 10px 5px 10px;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+}
+
+#mc_embed_signup input.email {
+	font-size: 14px;
+	padding: 7px;
+	margin: 20px 5px 5px 5px;
+	width: 400px;
+	text-align: center;
+}
+
+textarea.question{
+	height: 100px;
+}
+
+#contactform input.email, input.subject, textarea.question{
+	font-size: 14px;
+	padding: 7px;
+	margin: 5px 5px 5px 5px;
+	width: 400px;
+	text-align: center;
+}
+
+#contactform input.name{
+	font-size: 14px;
+	padding: 7px;
+	margin: 20px 5px 5px 5px;
+	width: 400px;
+	text-align: center;
+}
+
+.flogo {
+	margin-top: -30px;
+	height: 50px;
+	width: 50px;
+}
+
+/* Price List */
+#textbox1 {
+	float: left;
+	margin-top: 50px;
+}
+#textbox2 {
+	display: block;
+	width: 25%;
+}
+#textbox3 {
+	display: block;
+	width: 25%;
+}
+#textbox4 {
+	float: right;
+	margin-top: 50px;
+}
+/* Fun Stuff */
+
+h2 {
+	text-align: center;
+	margin-top: 10px;
+}
+
+/* Login */
+
+#login {
+	margin-top: 50px;
+	float: left;
+}
+
+#login h2 {
+	background: #ff6669;
+	border-radius: 20px 20px 0 0;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px 26px;
+}
+
+#login fieldset {
+	border-style: none;
+/*	background: #fff;*/
+	padding: 20px;
+	border-radius: 0 0 20px 20px;
+}
+
+#login fieldset p {
+	color: #494949;
+	margin-bottom: 14px;
+}
+
+#login fieldset input {
+	border-radius: 3px;
+}
+
+#login fieldset input[type="text"], #login fieldset input[type="password"], #login fieldset input[type="date"], #login fieldset input[type="time"]{
+	background: #eee;
+	color: #ff6669;
+	padding: 4px 10px;
+/*	width: 94%;*/
+}
+
+#login fieldset input[type="submit"] {
+	background: #ff6669;
+	color: white;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 120px;
+	cursor: pointer;
+}
+
+#login fieldset input[type="submit"]:hover {
+	background: #fee2b5;
+	color: #4a4439;
+	cursor: pointer;
+}
+
+/* About Us */
+
+.fb-like-box {
+	margin-left: -100px;
+	margin-top: 20px;
+	float: left;
+	border-style: solid;
+	border-color: #ff6669;
+}
+
+.aboutus {
+	height: 300px;
+	width: 200px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aboutustext {
+	margin-left: 300px;
+	font-size: 0.9em;
+}
+
+
+/* Photo Gallery */
+
+body { text-align: center;}
+a, a:link, a:active { color: #ff6669; outline: none; text-decoration: none; }
+a:hover { color: #4a4439; }
+
+/* Records */
+
+.header {
+	background-color: #fee2b5;
+}
+
+th {
+	padding: 5px;
+	color: #ff6669;
+
+}
+
+table {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#textboxleft {
+	float: left;
+}
+
+#textboxright {
+	float: right;
+}
+
+#textboxleft1 {
+	float: left;
+	margin-top: 30px;
+}
+
+#textboxright1 {
+	float: right;
+	margin-top: 30px;
+}
+
+#priceleft {
+	float: left;
+	margin-top: 55px;
+}
+
+#priceright {
+	float: right;
+	margin-top: 55px;
+}
+
+#pricemiddle1 {
+	display: inline-block;
+	margin-top: 55px;
+	width: 25%;
+}
+
+#pricemiddle2{
+	display: inline-block;
+	margin-top: 55px;
+	width: 25%;
+}
+/* Forum */
+
+#wrapper {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.forumtableleft {
+	float: left;
+}
+
+.forumtableright {
+	float: right;
+}
+
+/* Profile Page */
+
+#profilePicture {
+	margin-top: 20px;
+	float: left;
+}
+
+#bio {
+	margin-top: 20px;
+	text-align: center;
+}
+
+/* Footer */
+#footercontainer {
+	clear: both;
+	width: 100%;
+	height: 100px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+#footercontainer a, li{
+	color: #4a4439;
+	list-style-type: none;
+	font-family: Arial;
+	font-size: 12px;
+	display: inline;
+	padding: 10px;
+}
+
+#footercontainer a:hover {
+
+}
+
+#footer1 {
+	float: right;
+	margin-left: 20%;
+	margin-right: -60px;
+}
+
+#footer3 {
+	float: right;
+	margin-left: 5%;
+}
