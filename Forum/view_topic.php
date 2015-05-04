@@ -1,22 +1,11 @@
 <?php
-
+$page_title = "View Topic";
+$page_description = "View a forum topic for the forum on Penny Red's Pony Parties Riding School in Cornwall.";
 include ('headerf.php');
-
 ?>
 
 <div id="wrapper">
 
-
-<?php
-// Check to see if the person accessing this page is logged in
-if (!isset($_SESSION['username'])) {
-	echo "<form action='login_parse.php' method='post'>
-	Username: <input type='text' name='username' />&nbsp;
-	Password: <input type='password' name='password' />&nbsp;
-	<input type='submit' name='submit' value='Log In' />
-	";
-} 
-?>
 <div id="content">
 <?php
 // Connect to the database
@@ -29,7 +18,7 @@ function getusername($username) {
 	$row = mysql_fetch_assoc($res);
 	return $row['username'];
 }
-// Function that will convert the datetime string from the databas into a user-friendly format
+// Function that will convert the datetime string from the database into a user-friendly format
 function convertdate($date) {
 	$date = strtotime($date);
 	return date("M j, Y g:ia", $date);
@@ -44,7 +33,7 @@ $sql = "SELECT * FROM topics WHERE category_id='".$cid."' AND id='".$tid."' AND 
 $res = mysql_query($sql) or die(mysql_error());
 // Check to see if the topic exists
 if (mysql_num_rows($res) == 1) {
-	echo "<table width='100%'>";
+	echo "<table class='forumtable' width='100%'>";
 	// Check to see if the person accessing this page is logged in
 	if ($_SESSION['username']) { echo "<tr><td colspan='2'><input type='submit' value='Add Reply' onClick=\"window.location = 'post_reply.php?cid=".$cid."&tid=".$tid."'\" />"; } else { echo "<tr><td colspan='2'><p>Please log in to add your reply.</p><hr /></td></tr>"; }
 	// Fetch all the topic data from the database
@@ -56,7 +45,7 @@ if (mysql_num_rows($res) == 1) {
 		// Fetch all the post data from the database
 		while ($row2 = mysql_fetch_assoc($res2)) {
 			// Echo out the topic post data from the database
-			echo "<tr><td valign='top' style='border: 1px solid #000000;'><div style='min-height: 125px;'>".$row['topic_title']."<br />by <strong>".getusername($row2['post_creator'])."</strong> - ".convertdate($row2['post_date'])."<br /><br />".$row2['post_content']."<a href='delete.php'><br />Delete</a></div>";
+			echo "<tr><td valign='top' style='border: 1px solid #000000;'><div style='min-height: 125px;'>".$row['topic_title']."<br />by <strong>".getusername($row2['post_creator'])."</strong> - ".convertdate($row2['post_date'])."<br /><br />".$row2['post_content']."<a href='deletepost.php'><br />Delete</a></div>";
 		}
 		// Assign local variable for the current number of views that this topic has
 		$old_views = $row['topic_views'];

@@ -1,4 +1,6 @@
 <?php
+$page_title = "Create Topic";
+$page_description = "Create a topic for the forum on Penny Red's Pony Parties Riding School in Cornwall.";
 
 include ('headerf.php');
 

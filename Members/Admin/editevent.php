@@ -1,13 +1,11 @@
 <?php
-  function renderForm($eventid, $eventname, $eventdescription, $location, $date, $time, $error)
-  {
-?>
-<?php
-  $page_title = "Edit Event";
+ob_start();
+ $page_title = "Edit Event";
   $page_description = "Edit event page for Penny Red's Pony Parties Riding School in Cornwall.";
   include ("../headerm.php");
-?>  
- <?php
+  function renderForm($eventid, $eventname, $eventdescription, $location, $date, $time, $error)
+  {
+
  if ($error != '')
  {
    echo '<div style="padding:4px; border:1px solid red; color:red;">'.$error.'</div>';
@@ -27,24 +25,26 @@
         <form action="" method="POST">
 
           <fieldset>
-            <input type="hidden" name="eventid" value="<?php echo $eventid; ?>"/>
+            <table class="bookingform">
+              <tr><td><input type="hidden" name="eventid" value="<?php echo $eventid; ?>"/></td></tr>
 
-            <p><label for="eventname">Name</label></p>
-            <p><input type="text" name="eventname" value="<?php echo $eventname; ?>"/></p>
+              <tr><td><label for="eventname">Name</label></td><td>
+              <input type="text" name="eventname" value="<?php echo $eventname; ?>"/><br /></td></tr>
 
-            <p><label for="eventdescription">Event Description</label></p>
-            <p style="background-color: white;" ><textarea name="eventdescription" id="eventdescription" rows="4" cols="30"><?php echo $eventdescription; ?></textarea></p>
+              <tr><td><label for="eventdescription">Event Description</label></td><td>
+              <textarea name="eventdescription" id="eventdescription" rows="4" cols="20" style="background-color: white;"><?php echo $eventdescription; ?></textarea></p></td></tr>
 
-            <p><label for="location">Location</label></p>
-            <p><input type="text" name="location" value="<?php echo $location; ?>"/></p>
+              <tr><td><label for="location">Location</label></td><td>
+              <input type="text" name="location" value="<?php echo $location; ?>"/><br /></td></tr>
 
-            <p><label for="date">Date</label></p>
-            <p><input type="date" name="date" value="<?php echo $date; ?>"/></p>
+              <tr><td><label for="date">Date</label></td><td>
+              <input type="date" name="date" value="<?php echo $date; ?>"/><br /></td></tr>
 
-            <p><label for="time">Time</label></p>
-            <p><input type="time" name="time" value="<?php echo $time; ?>"/></p>
+              <tr><td><label for="time">Time</label></td><td>
+              <input type="time" name="time" value="<?php echo $time; ?>"/><br /></td></tr>
 
-            <input type="submit" name="submit" value="Edit Event">
+              <tr><td><input type="submit" name="submit" value="Edit Event"></td></tr>
+            </table>
 
           </fieldset>
 
@@ -148,6 +148,6 @@ else
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

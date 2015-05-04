@@ -1,14 +1,11 @@
 <?php
-session_start();
+$page_title = "Bookings";
+$page_description = "The lesson bookings for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if (($_SESSION['account_type'])=="Admin"){
     echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
-<?php
-$page_title = "Bookings";
-$page_description = "The lesson bookings for Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
 
 $sql2 = "SELECT fname, lname FROM users WHERE account_type='Admin' OR account_type='Staff'";
 $result2 = mysql_query($sql2);
@@ -33,45 +30,46 @@ $result2 = mysql_query($sql2);
         <form action="" method="POST">
 
           <fieldset>
-            <input type="hidden" name="lessonid"/>
+            <table>
+                <input type="hidden" name="lessonid"/>
 
-            <p><label for="name">Name</label></p>
-            <p><input type="text" name="name"/></p>
+                <tr><td><label for="name">Name</label></td><td>
+                <input type="text" name="name"/></td></tr>
 
-            <p><label for="description">Description</label></p>
-            <p><input type="text" name="description"/></p>
+                <tr><td><label for="description">Description</label></td><td>
+                <input type="text" name="description"/></td></tr>
 
-            <p><label for="type">Type</label></p>
-            <p><select name="type">
-                <option value="Group">Group</option>
-                <option value="Private">Private</option>
-                <option value="Hack">Hack</option>
-                <option value="Pony Day">Pony Day</option>
-                <option value="Other">Other</option>
-            </select>
+                <tr><td><label for="type">Type</label></td><td>
+                <select name="type">
+                    <option value="Group">Group</option>
+                    <option value="Private">Private</option>
+                    <option value="Hack">Hack</option>
+                    <option value="Pony Day">Pony Day</option>
+                    <option value="Other">Other</option>
+                </select></td></tr>
 
-            <p><label for="time">Time</label></p>
-            <p><input type="time" name="time"/></p>
+                <tr><td><label for="time">Time</label></td><td>
+                <input type="time" name="time"/></td></tr>
 
-            <p><label for="date">Date</label></p>
-            <p><input type="date" name="date"/></p>
+                <tr><td><label for="date">Date</label></td><td>
+                <input type="date" name="date"/></td></tr>
 
-            <p><label for="location">Location</label></p>
-            <p><input type="text" name="location"/></p>
+                <tr><td><label for="location">Location</label></td><td>
+                <input type="text" name="location"/></td></tr>
 
-            <p><label for="spaces">Spaces</label></p>
-            <p><input type="text" name="spaces"/></p>
+                <tr><td><label for="spaces">Spaces</label></td><td>
+                <input type="text" name="spaces"/></td></tr>
 
-            <p><label for="staffmember">Staff Member</label></p>
-            <?php echo "<select name='staffmember'>"; 
-                while ($row = mysql_fetch_array($result2)) {
-                echo "<option value='" . $row['fname'] . "'>" . $row['fname'] . " " . $row['lname'] . "</option>";
-                }
-                echo "</select>";
-            ?></p>
+                <tr><td><label for="staffmember">Staff Member</label></td><td>
+                <?php echo "<select name='staffmember'>"; 
+                    while ($row = mysql_fetch_array($result2)) {
+                    echo "<option value='" . $row['fname'] . "'>" . $row['fname'] . " " . $row['lname'] . "</option>";
+                    }
+                    echo "</select>";
+                ?></td></tr>
 
-            <input type="submit" name="submit" value="New Lesson">
-
+                <tr><td><input type="submit" name="submit" value="New Lesson"></td></tr>
+            </table>
           </fieldset>
 
         </form>
@@ -81,18 +79,7 @@ $result2 = mysql_query($sql2);
     </div>
  
  </form> 
- </body>
- 
-<div id="footer">
-                <ul>
-                    <li><a href="./AiW-Help.html">Help</a></li>
-                    <li><a href="./AiW-PrivacyCookies.html">Privacy &amp; Cookies</a></li>
-                    <li><a href="./AiW-Accessibility.html">Accessibility</a></li>
-                    <li><a href="./AiW-TermsOUse.html">Terms of Use</a></li>
-                </ul>
-            </div> <!-- End of footer -->
-    </body>
-</html>
+
  <?php 
 
 mysql_connect("localhost","root","root") or die("Couldnt connect to the server");
@@ -137,6 +124,6 @@ mysql_select_db("PennyReds") or die("Couldnt find the database");
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

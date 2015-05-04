@@ -16,6 +16,6 @@ header('Location: ../Mainsite/register.php');
 		</form>
 	</body>
 <?php
-include ("../../../footer.html");
+include ("../footer.html");
 ?>
 </html>

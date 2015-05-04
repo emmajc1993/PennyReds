@@ -1,8 +1,4 @@
 <?php
-/* 
- DELETE.PHP
- Deletes a specific entry from the 'players' table
-*/
 
  // connect to the database
 mysql_connect("localhost","root","root") or die("Couldnt connect to the server");

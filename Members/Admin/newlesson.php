@@ -33,19 +33,20 @@ function renderForm($horsename, $height, $weight, $error)
         <form action="" method="POST">
 
           <fieldset>
-          	<input type="hidden" name="eventid"/>
+            <table>
+            	<input type="hidden" name="eventid"/>
 
-            <p><label for="horsename">Horse Name</label></p>
-            <p><input type="text" name="horsename"/></p>
+              <tr><td><label for="horsename">Horse Name</label></td><td>
+              <input type="text" name="horsename"/></td></tr>
 
-            <p><label for="height">Height (hh)</label></p>
-            <p><input type="text" name="height"/></p>
+              <tr><td><label for="height">Height (hh)</label></td><td>
+              <input type="text" name="height"/></td></tr>
 
-            <p><label for="weight">Weight</label></p>
-            <p><input type="text" name="weight"/></p>
+              <tr><td><label for="weight">Weight</label></td><td>
+              <input type="text" name="weight"/></td></tr>
 
-            <input type="submit" name="submit" value="New Lesson">
-
+              <tr><td><input type="submit" name="submit" value="New Lesson"></td></tr>
+            </table>
         </fieldset>
 
     </form>

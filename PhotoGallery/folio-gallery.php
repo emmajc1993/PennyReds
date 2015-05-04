@@ -5,7 +5,7 @@ $albumsPerPage = '12';       // number of albums per page
 $itemsPerPage  = '12';       // number of images per page    
 $thumb_width   = '150';      // width of thumbnails
 //$thumb_height  = '85';       // height of thumbnails
-$extensions    = array(".jpg",".png",".gif",".JPG",".PNG",".GIF"); // allowed extensions in photo gallery
+$extensions    = array(".jpg",".jpeg",".png",".gif",".JPG",".PNG",".GIF"); // allowed extensions in photo gallery
 
 
 // create thumbnails from images
@@ -252,6 +252,6 @@ if (!isset($_GET['album'])) {
 }
 ?>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

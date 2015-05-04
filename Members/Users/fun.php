@@ -1,12 +1,11 @@
-<?php
-session_start();
-if(isset($_SESSION['username'])) {
-	echo "";
+<?php 
+$page_title = "User Section";
+$page_description = "User section of Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
+if (($_SESSION['account_type'])=="Admin" OR ($_SESSION['account_type'])=="Staff" OR ($_SESSION['account_type'])=="User") {
+  echo "";
 } else
-header('Location: ../../Login/register.php');
-?>
-<?php
-	include ("../headerm.php")
+  header("Location: ../Login/register.php");
 ?>
 				<div id="imageleft">
 					<a href="quiz/start.php"><img src="../../images/quiz.jpg" alt=""></a>
@@ -25,6 +24,6 @@ header('Location: ../../Login/register.php');
 				</div> <!-- EoF galleryItem -->
 	</body>
 	<?php
-include ("../../footer.html");
+include ("footer.html");
 ?>
 </html>

@@ -1,17 +1,23 @@
 <?php
-session_start();
+$page_title = "Bookings";
+$page_description = "The lesson bookings for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if (($_SESSION['account_type'])=="Admin" OR ($_SESSION['account_type'])=="Staff") {
 	echo "";
 } else
 header("Location: ../Users/fun.php");
 ?>
-<?php
-$page_title = "Bookings";
-$page_description = "The lesson bookings for Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
-?>
 <p><a href="newlesson.php">Add a new lesson</a></p><br />
-
+<script type="text/javascript">
+function makesure() {
+	if (confirm('Are you sure you wish to delete this lesson? This action is irreversible!')) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+</script>
 <?php
 
 // Select all the data from the categories table in your database and order them by the category_title
@@ -28,12 +34,13 @@ if (mysql_num_rows($res) > 0) {
 		$name = $row['name'];
 		$description = $row['description'];
 		$type = $row['type'];
-		$time = $row['time'];
-		$date = $row['date'];
+		$time = strftime("%H:%M",strtotime($row['time']));
+		$date = strftime("%A %d %B, %Y",strtotime($row['date']));
 		$location = $row['location'];
 		$spaces = $row['spaces'];
 		// Append the data from the categories table into a list of links
-		$lessons .= "<div id='lessons'><a href='view_lessons.php?lessonid=".$lessonid."'>".$name."</a> - ".$description."<br /> ".$type." - ".$time." - ".$date." - ".$location." - ".$spaces."</a><br /><br /></div>";
+		$lessons .= "<div id='lessons'><a href='view_lessons.php?lessonid=".$lessonid."'>".$name."</a> - ".$description."<br /> ".$type." - ".$time." - ".$date." - ".$location." - ".$spaces."</a>
+		<td><a href='deletelesson.php?lessonid=".$lessonid."' onclick='return makesure();'>Delete</a></td><br /><br /></div>";
 	}
 	// Display list of links
 	echo $lessons;
@@ -44,6 +51,6 @@ if (mysql_num_rows($res) > 0) {
 ?>
 </body>
 <?php
-include ("../../footer.html");
+include ("footer.html");
 ?>
 </html>

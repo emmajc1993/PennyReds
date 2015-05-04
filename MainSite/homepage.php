@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 $page_title = "Homepage";
 $page_description = "Homepage for Penny Red's Pony Parties Riding School in Cornwall.";
 include ("../headerm.php");

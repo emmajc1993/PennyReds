@@ -1,8 +1,4 @@
 <?php
-// Building A PHP MySQL Forum Tutorial Series
-// Published by Tim Kipp @ www.timkipptutorials.com on February 14, 2011
-// This script will parse the information from the create_topic.php page and add it to the database
-
 session_start(); // Start your sessions to allow your page to interact with session variables
 
 // Check to see if there is someone logged in

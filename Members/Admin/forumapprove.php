@@ -1,15 +1,13 @@
 <?php
-session_start();
+$page_title = "Approve Forum Posts";
+$page_description = "Approve posts for the forum at Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
 	echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
 
-<?php 
-$page_title = "Approve Forum Posts";
-$page_description = "Approve posts for the forum at Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
+
 
 mysql_connect("localhost","root","root") or die("Couldnt connect to the server");
 mysql_select_db("PennyReds") or die("Couldnt find the database");
@@ -60,7 +58,7 @@ for ($i = $start; $i < $end; $i++)
 	echo "<tr>";
 		// echo '<td>' . mysql_result($result, $i, 'id') . '</td>';
 	echo '<td>' . mysql_result($result, $i, 'topic_title') . '</td>';
-	echo '<td><a href="editforum.php?id=' . mysql_result($result, $i, 'id') . '">Edit</a></td>';
+	echo '<td><a href="editforum.php?id=' . mysql_result($result, $i, 'id') . '" style="background-color: white;">Edit</a></td>';
 	echo "</tr>"; 
 }
 	// close table>
@@ -119,7 +117,7 @@ for ($i = $start; $i < $end; $i++)
 	echo "<tr>";
 		// echo '<td>' . mysql_result($result, $i, 'id') . '</td>';
 	echo '<td>' . mysql_result($result, $i, 'post_content') . '</td>';
-	echo '<td><a href="editforum2.php?id=' . mysql_result($result, $i, 'id') . '">Edit</a></td>';
+	echo '<td><a href="editforum2.php?id=' . mysql_result($result, $i, 'id') . '" style="background-color: white;">Edit</a></td>';
 	echo "</tr>"; 
 }
 	// close table>
@@ -130,6 +128,6 @@ echo "</table>";
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

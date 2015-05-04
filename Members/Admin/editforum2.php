@@ -1,19 +1,14 @@
 <?php
-session_start();
+ $page_title = "Approve Posts";
+ $page_description = "Approve forum post for Penny Red's Pony Parties Riding School in Cornwall.";
+ include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
   echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
-<?php
 
 function renderForm($id, $post_content, $approved, $error)
 {
- ?>
- <?php
- $page_title = "Approve Posts";
- $page_description = "Approve forum post for Penny Red's Pony Parties Riding School in Cornwall.";
- include ("../headerm.php");
 
  $sql = "SELECT approved FROM posts";
  $result = mysql_query($sql);
@@ -37,20 +32,21 @@ function renderForm($id, $post_content, $approved, $error)
       <form action="" method="POST">
 
         <fieldset>
-          <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+          <table>
+            <tr><td><input type="hidden" name="id" value="<?php echo $id; ?>"/></td></tr>
 
-          <p><label for="post_content">Post</label></p>
-          <p><input type="text" name="post_content" value="<?php echo $post_content; ?>" readonly="true" style="background-colour:lightgrey;"/></p>
+            <tr><td><label for="post_content">Post</label></td><td>
+            <p><input type="text" name="post_content" value="<?php echo $post_content; ?>" readonly="true" style="background-colour:lightgrey;"/></td></tr>
 
-          <p><label for="approved">Approved</label></p>
-          <p style="background-color: white;"><?php echo "<select name='approved'>"; 
-          echo '<option value="Waiting">Waiting</option>';
-          echo '<option value="Yes">Yes</option>';
-          echo '<option value="No">No</option>';
-          echo "</select>";?></p>
+            <tr><td><label for="approved">Approved</label></td><td>
+            <p style="background-color: white;"><?php echo "<select name='approved'>"; 
+            echo '<option value="Waiting">Waiting</option>';
+            echo '<option value="Yes">Yes</option>';
+            echo '<option value="No">No</option>';
+            echo "</select>";?></td></tr>
 
-          <input type="submit" name="submit" value="Submit">
-
+            <tr><td><input type="submit" name="submit" value="Submit"></td></tr>
+          </table>
         </fieldset>
 
       </form>
@@ -147,6 +143,6 @@ else
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

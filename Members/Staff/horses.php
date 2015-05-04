@@ -1,11 +1,11 @@
 <?php
-session_start();
-if(($_SESSION['account_type'])=="Admin"){
+$page_title = "Horses";
+$page_description = "Horse registered at Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
+if (($_SESSION['account_type'])=="Admin" OR ($_SESSION['account_type'])=="Staff") {
 	echo "";
 } else
 	header("Location: ../Users/fun.php");
-
-include ("../headerm.php");
 ?>
 <script type="text/javascript">
  function makesure() {
@@ -40,28 +40,28 @@ $searchQuery = "SELECT * FROM `horses` WHERE `horsename` LIKE '%".$_POST['search
 if(isset($_POST['searchButton'])){
     $searchResults = mysqli_query($dbc, $searchQuery);
     echo '<table border="1px">';
-    echo '<tr class="header"><th>Horse ID</th><th>Horse Name</th><th>Height (hh)</th><th>Weight (kg)</th></tr>';
+    echo '<tr class="header"><th>Horse ID</th><th>Horse Name</th><th>Height (hh)</th><th>Weight (kg)</th><th></th><th></th></tr>';
     while($row1 = mysqli_fetch_array($searchResults)){
         echo '<tr>';
 
-        echo '<td><strong>';
+        echo '<td><strong style="background-color: white;">';
         echo $row1['horseid'];
         echo '<strong></td>';
         
-        echo '<td><strong>';
+        echo '<td><strong style="background-color: white;">';
         echo $row1['horsename'];
         echo '</strong></td>';
         
-        echo '<td><strong>';
+        echo '<td><strong style="background-color: white;">';
         echo $row1['height'];
         echo '</strong></td>';
         
-        echo '<td><strong>';
+        echo '<td><strong style="background-color: white;">';
         echo $row1['weight'];
         echo '</strong></td>';
 
-        echo '<td><a href="edithorse.php?horseid=' . $horseid . '">Edit</a></td>';
-		echo '<td><a href="deletehorse.php?horseid=' . mysql_result($result, 'horseid') . '">Delete</a></td>';
+        echo '<td><a href="edithorse.php?horseid=' . $horseid . '" style="background-color: white;">Edit</a></td>';
+		echo '<td><a href="deletehorse.php?horseid=' . mysql_result($result, 'horseid') . '" style="background-color: white;" onclick="return makesure();">Delete</a></td>';
 
         echo '</tr>';
     }
@@ -131,8 +131,8 @@ if(isset($_POST['searchButton'])){
 		echo '<td>' . mysql_result($result, $i, 'horsename') . '</td>';
 		echo '<td>' . mysql_result($result, $i, 'height') . '</td>';
 		echo '<td>' . mysql_result($result, $i, 'weight') . '</td>';
-		echo '<td><a href="edithorse.php?horseid=' . mysql_result($result, $i, 'horseid') . '">Edit</a></td>';
-		echo '<td><a href="deletehorse.php?horseid=' . mysql_result($result, $i, 'horseid') . '" onclick="return makesure();">Delete</a></td>';
+		echo '<td><a href="edithorse.php?horseid=' . mysql_result($result, $i, 'horseid') . '" style="background-color: white;">Edit</a></td>';
+		echo '<td><a href="deletehorse.php?horseid=' . mysql_result($result, $i, 'horseid') . '" style="background-color: white;" onclick="return makesure();">Delete</a></td>';
 		echo "</tr>"; 
 	}
 	// close table>
@@ -146,6 +146,6 @@ if(isset($_POST['searchButton'])){
 
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

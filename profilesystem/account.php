@@ -1,12 +1,14 @@
 <?php 
-	session_start();
+ob_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 	include ("headerp.php");
-	require ("functions.php");
+$page_title = "Profile Page";
+$page_description = "Profile page for users of Penny Red's Pony Parties Riding School in Cornwall.";
 
-	error_reporting(E_ALL);
-	ini_set('display_errors', '1');
-?>
-     
+if(!isset($_GET['userid'])&&isset($_SESSION['username'])) header("Location: ?userid=".getId($_SESSION['username']));
+
+?>   
 
 <div id="container">
 	<div id="menu">

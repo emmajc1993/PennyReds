@@ -30,12 +30,12 @@ if(isset($_GET['question'])){
 	$next = $question + 1;
 	$prev = $question - 1;
 	if(!isset($_SESSION['qid_array']) && $question != 1){
-		$msg = "Sorry! No cheating.";
+		$msg = "<p>Sorry! No cheating.<p>";
 		header("location: index.php?msg=$msg");
 		exit();
 	}
 	if(isset($_SESSION['qid_array']) && in_array($question, $_SESSION['qid_array'])){
-		$msg = "Sorry, Cheating is not allowed. You will now have to start over. Haha.";
+		$msg = "<p>Sorry, Cheating is not allowed. You will now have to start over. Haha!</p>";
 		unset($_SESSION['answer_array']);
 		unset($_SESSION['qid_array']);
 		session_destroy();
@@ -43,7 +43,7 @@ if(isset($_GET['question'])){
 		exit();
 	}
 	if(isset($_SESSION['lastQuestion']) && $_SESSION['lastQuestion'] != $prev){
-		$msg = "Sorry, Cheating is not allowed. You will now have to start over. Haha.";
+		$msg = "<p>Sorry, Cheating is not allowed. You will now have to start over. Haha!</p>";
 		unset($_SESSION['answer_array']);
 		unset($_SESSION['qid_array']);
 		session_destroy();
@@ -52,15 +52,11 @@ if(isset($_GET['question'])){
 	}
 }
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
 <title>Quiz Page</title>
 <script type="text/javascript">
 function countDown(secs,elem) {
 	var element = document.getElementById(elem);
-	element.innerHTML = "You have "+secs+" seconds remaining.";
+	element.innerHTML = "<p>You have "+secs+" seconds remaining.<p>";
 	if(secs < 1) {
 		var xhr = new XMLHttpRequest();
 		var url = "userAnswers.php";
@@ -69,7 +65,7 @@ function countDown(secs,elem) {
 			xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 			xhr.onreadystatechange = function() {
 		if(xhr.readyState == 4 && xhr.status == 200) {
-			alert("You did not answer the question in the allotted time. It will be marked as incorrect.");
+			alert("<p>You did not answer the question in the allotted time. It will be marked as incorrect.</p>");
 			clearTimeout(timer);
 	}
 }
@@ -146,6 +142,6 @@ window.oncontextmenu = function(){
 <script type="text/javascript">countDown(20,"counter_status");</script>
 </body>
 <?php
-include ("footer.php");
+include ("../footer.html");
 ?>
 </html>

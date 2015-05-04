@@ -3,6 +3,7 @@
   $page_description = "About Us page for Penny Red's Pony Parties Riding School in Cornwall.";
   include ("../headerm.php");
 ?>
+<!-- Facebook generated code to add a Facebook feed -->
 	<script>
 		(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];

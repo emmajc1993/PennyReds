@@ -9,38 +9,40 @@
         <h2>Register</h2>
         <form action="core/reg-check.php" method="POST">
             <fieldset>
-                <?php if(isset($_GET["feedback1"])){echo $_GET["feedback1"];} ?>
-                <p><label for="fname">First Name</label></p>
-                <p><input type="text" name="fname" id="fname" placeholder="First Name"></p>
+                <table>
+                    <?php if(isset($_GET["feedback1"])){echo $_GET["feedback1"];} ?>
+                    <tr><td><label for="fname">First Name</label></td><td>
+                    <input type="text" name="fname" id="fname" placeholder="First Name"><br /></td></tr>
 
-                <p><label for="lname">Last Name</label></p>
-                <p><input type="text" name="lname" id="lname" placeholder="Last Name"></p>
+                    <tr><td><label for="lname">Last Name</label></td><td>
+                    <input type="text" name="lname" id="lname" placeholder="Last Name"><br /></td></tr>
 
-                <p><label for="dob">Date of Birth</label></p>
-                <p><input type="date" name="dob" id="dob" placeholder="Date of Birth"></p>
+                    <tr><td><label for="dob">Date of Birth</label></td><td>
+                    <input type="date" name="dob" id="dob" placeholder="Date of Birth"><br /></td></tr>
 
-                <p><label for="contactno">Contact Number</label></p>
-                <p><input type="text" name="contactno" id="contactno" placeholder="Contact Number"></p>
+                    <tr><td><label for="contactno">Contact Number</label></td><td>
+                    <input type="text" name="contactno" id="contactno" placeholder="Contact Number"><br /></td></tr>
 
-                <p><label for="email_address">Email Address</label></p>
-                <p><input type="text" name="email_address" id="email_address" placeholder="Email Address"></p>
+                    <tr><td><label for="email_address">Email Address</label></td><td>
+                    <input type="text" name="email_address" id="email_address" placeholder="Email Address"><br /></td></tr>
 
-                <p><label for="username">Username</label></p>
-                <p><input type="text" name="username" id="username" placeholder="Username"></p>
+                    <tr><td><label for="username">Username</label></td><td>
+                    <input type="text" name="username" id="username" placeholder="Username"><br /></td></tr>
 
-                <p><label for="password">Password</label></p>
-                <p><input type="password" name="password" id="password" placeholder="Password"></p>
+                    <tr><td><label for="password">Password</label></td><td>
+                    <input type="password" name="password" id="password" placeholder="Password"></p></td></tr>
 
-                <p><label for="confirm">Confirm Password</p>
-                <p><input type="password" name="password1" id="password1" placeholder="Re-Enter Password"></p>
+                    <tr><td><label for="confirm">Confirm Password</label></td><td>
+                    <input type="password" name="password1" id="password1" placeholder="Re-Enter Password"><br /></td></tr>
 
-                <input type="submit" value="Register">
+                    <tr><td><input type="submit" value="Register"></td></tr>
+                </table>
             </fieldset>
         </form>
     </div> <!-- end login -->
 </div><!-- end loginbox -->
    </body>
 <?php
-include ("footer.php");
+include ("../footer.html");
 ?>
 </html>

@@ -1,23 +1,15 @@
 <?php
-session_start();
+ob_start();
+$page_title = "Edit Members";
+   $page_description = "Edit members that have registered for Penny Red's Pony Parties Riding School in Cornwall.";
+   include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
     echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
-<?php
 
 function renderForm($userid, $fname, $lname, $dob, $contactno, $email_address, $height, $weight, $account_type, $error)
 {
-   ?>
-   <?php
-   $page_title = "Edit Members";
-   $page_description = "Edit members that have registered for Penny Red's Pony Parties Riding School in Cornwall.";
-   include ("../headerm.php");
-
-   ?>
-
-   <?php 
  // if there are any errors, display them
    if ($error != '')
    {
@@ -38,37 +30,39 @@ function renderForm($userid, $fname, $lname, $dob, $contactno, $email_address, $
             <form action="" method="POST">
 
               <fieldset>
-                <input type="hidden" name="userid" value="<?php echo $userid; ?>"/>
+                <table>
+                  <input type="hidden" name="userid" value="<?php echo $userid; ?>"/>
 
-                <p><label for="fname">First Name</label></p>
-                <p><input type="text" name="fname" value="<?php echo $fname; ?>"/></p>
+                  <tr><td><label for="fname">First Name</label></td><td>
+                  <input type="text" name="fname" value="<?php echo $fname; ?>"/></td></tr>
 
-                <p><label for="lname">Last Name</label></p>
-                <p><input type="text" name="lname" value="<?php echo $lname; ?>"/></p>
+                  <tr><td><label for="lname">Last Name</label></td><td>
+                  <input type="text" name="lname" value="<?php echo $lname; ?>"/></td></tr>
 
-                <p><label for="dob">DOB</label></p>
-                <p><input type="date" name="dob" value="<?php echo $dob; ?>"/></p>
+                  <tr><td><label for="dob">DOB</label></td><td>
+                  <input type="date" name="dob" value="<?php echo $dob; ?>"/></td></tr>
 
-                <p><label for="contactno">Contact Number</label></p>
-                <p><input type="text" name="contactno" value="<?php echo $contactno; ?>"/></p>
+                  <tr><td><label for="contactno">Contact Number</label></td><td>
+                  <input type="text" name="contactno" value="<?php echo $contactno; ?>"/></td></tr>
 
-                <p><label for="email_address">Email Address</label></p>
-                <p><input type="text" name="email_address" value="<?php echo $email_address; ?>"/></p>
+                  <tr><td><label for="email_address">Email Address</label></td><td>
+                  <input type="text" name="email_address" value="<?php echo $email_address; ?>"/></td></tr>
 
-                <p><label for="height">Height</label></p>
-                <p><input type="text" name="height" value="<?php echo $height; ?>"/></p>
+                  <tr><td><label for="height">Height</label></td><td>
+                  <input type="text" name="height" value="<?php echo $height; ?>"/></td></tr>
 
-                <p><label for="weight">Weight</label></p>
-                <p><input type="text" name="weight" value="<?php echo $weight; ?>"/></p>
+                  <tr><td><label for="weight">Weight</label></td><td>
+                  <input type="text" name="weight" value="<?php echo $weight; ?>"/></td></tr>
 
-                <p><label for="account_type">Account Type</label></p> 
-                <p style="background-color: white;"><?php echo "<select name='account_type'>"; 
-                echo '<option value="Member">Member</option>';
-                echo '<option value="Admin">Admin</option>';
-                echo '<option value="Staff">Staff</option>';
-                echo "</select>";?></p>
+                  <tr><td><label for="account_type">Account Type</label></td><td> 
+                  <p style="background-color: white;"><?php echo "<select name='account_type'>"; 
+                  echo '<option value="Member">Member</option>';
+                  echo '<option value="Admin">Admin</option>';
+                  echo '<option value="Staff">Staff</option>';
+                  echo "</select>";?></td></tr>
 
-                <input type="submit" name="submit" value="Edit Member">
+                  <tr><td><input type="submit" name="submit" value="Edit Member" style="background-color: #ff646b;"></td></tr>
+                </table>
 
             </fieldset>
 
@@ -179,6 +173,6 @@ else
 
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

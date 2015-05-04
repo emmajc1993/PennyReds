@@ -13,7 +13,7 @@ include ("../headerm.php");
 ?>
 
 <?
-$updateinfo = @$_POST['updateinfo'];
+$updateinfo = @$_POST['updateinfo2'];
 
   //First Name, Last Name and About the user query
 $get_info = mysql_query("SELECT textfieldid, textfield FROM editinfo WHERE textfieldid='5'");
@@ -26,11 +26,16 @@ if ($updateinfo) {
  $textfield = @$_POST['textfield'];
 
  if (strlen($textfield) < 3) {
-  echo "You must write more than 3 characters.";
-} else
+  echo "Your first name must be 3 more more characters long.";
+}
+else
+ if (strlen($textfield) < 5) {
+  echo "Your last name must be 5 more more characters long.";
+}
+else
 {
     //Submit the form to the database
-  $info_submit_query = mysql_query("UPDATE editinfo SET textfield='5' WHERE textfieldid='5'");
+  $info_submit_query = mysql_query("UPDATE editinfo SET textfieldid='5', textfield='$textfield' WHERE textfieldid='5'");
   echo "<div id='echotext'>Your profile info has been updated!</div>";
 }
 }
@@ -42,8 +47,9 @@ else
 ?>
 <div id="priceleft">
   <form action="editprices.php" method="post">
-    <p><strong>Group Lesson:</strong></p> <textarea name="textfield" id="textfield" rows="6" cols="20"><? echo $db_textfield; ?></textarea></p>
-    <input type="submit" name="updateinfo" id="updateinfo" value="Update">
+    <p><strong>Private Lesson:</strong></p>
+    <textarea name="textfield" id="textfield" rows="6" cols="20"><? echo $db_textfield; ?></textarea></p>
+    <input type="submit" name="updateinfo" id="updateinfo2" value="Update">
   </form>
 </div>
 
@@ -171,6 +177,6 @@ else
 
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

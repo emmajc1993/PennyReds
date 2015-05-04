@@ -1,9 +1,7 @@
 <?php
-// Building A PHP MySQL Forum Tutorial Series
-// Published by Tim Kipp @ www.timkipptutorials.com on February 14, 2011
-// This script will parse the information from the post_reply.php page and add it to the database
-
-session_start(); // Start your sessions to allow your page to interact with session variables
+$page_title = "Post Reply";
+$page_description = "Post a reply for the forum on Penny Red's Pony Parties Riding School in Cornwall.";
+include ('headerf.php');
 
 // Check to see if the person accessing this page is logged in
 if ($_SESSION['userid']) {
@@ -86,3 +84,9 @@ if ($_SESSION['userid']) {
 	exit();
 }
 ?>
+
+</body>
+<?php
+include ("footer.html");
+?>
+</html>

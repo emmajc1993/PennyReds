@@ -122,52 +122,6 @@ ul {
 	margin-top: 10px;
 }
 
-/* Footer */
-
-#footer {
-/*   position:absolute;
-   bottom:0;
-   background:#fee2b5;
-   width:100%;
-   height:80px;
-   left:0;*/
- }
-
-#footer ul { 
-	list-style-type: none;
-}
-
-#footer ul li { 
-	display: inline; 
-}
-
-#footer ul li a {
-	padding: .2em 1em;
-	color: white;
-	font-family: "Aller", Georgia, Serif;
-	font-size: small;
-}
-
-#footer ul li a:link {
-	color: #7f7157;
-	text-decoration: none;
-}
-
-#footer ul li a:visited {
-	color: white;
-	text-decoration: none;
-}
-
-#footer ul li a:hover {
-	color: #ff6669;
-	text-decoration: none;
-}
-
-#footer ul li a:active {
-	color: #ff6669;
-	text-decoration: none;
-}
-
 /* Graphics */
 
 .placeholder {
@@ -395,11 +349,11 @@ h2 {
 /* Photo Gallery */
 
 body { text-align: center;}
-a, a:link, a:active { color: #ff6669; font-weight: bold; outline: none; text-decoration: none; }
+a, a:link, a:active { color: #ff6669; outline: none; text-decoration: none; }
 a:hover { color: #4a4439; }
 
 /* Records */
-/*
+
 .header {
 	background-color: #fee2b5;
 }
@@ -415,7 +369,7 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 }
-*/
+
 /* Forum */
 
 #wrapper {
@@ -442,33 +396,70 @@ table {
 }
 
 .quizbuttonleft {
-	width: 30%;
+	width: 25%;
 	float: left;
 	margin-top: 60px;
 	height: 200px;
 	font-size: 30px;
 	font-weight: bold;
 	color: white;
-	margin-left: 40px;
+	margin-left: 200px;
 }
 
 .quizbuttonleft:hover {
 	background-color: #fee2b5;
 	color: #ff6669;
+	cursor: pointer;
 }
 
 .quizbuttonright {
-	width: 30%;
+	width: 25%;
 	float: right;
 	margin-top: 60px;
 	height: 200px;
 	font-size: 30px;
 	font-weight: bold;
 	color: white;
-	margin-right: 40px;
+	margin-right: 200px;
 }
 
 .quizbuttonright:hover {
 	background-color: #fee2b5;
 	color: #ff6669;
+	cursor: pointer;
+}
+
+/* Footer */
+#footercontainer {
+	clear: both;
+	width: 100%;
+	height: 100px;
+/*	position:absolute;*/
+	bottom:0;
+	left:0;
+	top: 100%;
+}
+
+#footercontainer a, li{
+	color: #4a4439;
+	list-style-type: none;
+	font-family: Arial;
+	font-size: 12px;
+	display: inline;
+	padding: 10px;
+}
+
+#footercontainer a:hover {
+	cursor: pointer;
+}
+
+#footer1 {
+	float: right;
+	margin-left: 20%;
+	margin-right: -60px;
+}
+
+#footer3 {
+	float: right;
+	margin-left: 5%;
 }

@@ -1,15 +1,12 @@
 <?php
-session_start();
+$page_title = "Admin Section";
+$page_description = "Admin section for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
 	echo "";
 } else
 header("Location: ../Users/fun.php");
 ?>
-<?php
-$page_title = "Admin Section";
-$page_description = "Admin section/page for Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
-?>  
 
 <div id="imageleft">
 	<a href="../Booking/index.php"><img src="../../images/addnewbooking.jpg" alt=""></a>
@@ -43,6 +40,6 @@ include ("../headerm.php");
 </div> <!-- EoF galleryItem -->
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

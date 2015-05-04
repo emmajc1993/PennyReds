@@ -1,14 +1,13 @@
 <?php
-session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+$page_title = "Edit Lesson";
+$page_description = "Edit a lesson for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
     echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
-<?php
-$page_title = "Edit Lesson";
-$page_description = "Edit a lesson for Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
 
 $sql = "SELECT * FROM horses";
 $result = mysql_query($sql);
@@ -41,43 +40,44 @@ $result2 = mysql_query($sql2);
         <form action="" method="POST">
 
           <fieldset>
-          	<input type="hidden" name="bookingid"/>
+            <table>
+              	<input type="hidden" name="bookingid"/>
 
-            <p><label for="fname">First Name</label></p>
-            <p><input type="text" name="fname" value="<?php echo $fname; ?>"/></p>
+                <tr><td><label for="fname">First Name</label></td><td>
+                <input type="text" name="fname" value="<?php echo $fname; ?>"/></td></tr>
 
-            <p><label for="lname">Last Name</label></p>
-            <p><input type="text" name="lname" value="<?php echo $lname; ?>"/></p>
+                <tr><td><label for="lname">Last Name</label></td><td>
+                <input type="text" name="lname" value="<?php echo $lname; ?>"/></td></tr>
 
-            <p><label for="height">Height</label></p>
-            <p><input type="text" name="height" value="<?php echo $height; ?>"/></p>
+                <tr><td><label for="height">Height</label></td><td>
+                <input type="text" name="height" value="<?php echo $height; ?>"/></td></tr>
 
-            <p><label for="weight">Weight</label></p>
-            <p><input type="text" name="weight" value="<?php echo $weight; ?>"/></p>
+                <tr><td><label for="weight">Weight</label></td><td>
+                <input type="text" name="weight" value="<?php echo $weight; ?>"/></td></tr>
 
-            <p><label for="horsename">Horse Name</label></p>
-            <?php echo "<select name='horsename'>"; 
-                while ($row = mysql_fetch_array($result)) {
-                    echo "<option value='" . $row['horsename'] . "'>" . $row['horsename'] . "</option>";
-                }
-                echo "</select>";
-                ?>
+                <tr><td><label for="horsename">Horse Name</label></td><td>
+                <?php echo "<select name='horsename'>"; 
+                    while ($row = mysql_fetch_array($result)) {
+                        echo "<option value='" . $row['horsename'] . "'>" . $row['horsename'] . "</option>";
+                    }
+                    echo "</select>";
+                    ?></td></tr>
 
-            <p><label for="additionaldetails">Additional Details</label></p>
-            <p style="background-color: white;" ><textarea name="additionaldetails" id="additionaldetails" rows="4" cols="30"><?php echo $additionaldetails; ?></textarea></p>
+                <tr><td><label for="additionaldetails">Additional Details</label></td><td>
+                <p style="background-color: white;" ><textarea name="additionaldetails" id="additionaldetails" rows="4" cols="15"><?php echo $additionaldetails; ?></textarea></td></tr>
 
-            <p><label for="staffmember">Staff Member</label></p>
-            <?php echo "<select name='staffmember'>"; 
-                while ($row = mysql_fetch_array($result2)) {
-                echo "<option value='" . $row['fname'] . "'>" . $row['fname'] . " " . $row['lname'] . "</option>";
-            }
-            echo "</select>";
-            ?></p>
+                <tr><td><label for="staffmember">Staff Member</label></td><td>
+                <?php echo "<select name='staffmember'>"; 
+                    while ($row = mysql_fetch_array($result2)) {
+                    echo "<option value='" . $row['fname'] . "'>" . $row['fname'] . " " . $row['lname'] . "</option>";
+                    }
+                    echo "</select>";
+                ?></td></tr>
 
-            <input type="hidden" name="bookingid" value="<?php echo $bookingid; ?>" />
+                <tr><td><input type="hidden" name="bookingid" value="<?php echo $bookingid; ?>" /></td></tr>
 
-            <input type="submit" name="submit" value="Edit Lesson">
-
+                <tr><td><input type="submit" name="submit" value="Edit Lesson"></td></tr>
+            </table>
           </fieldset>
 
         </form>
@@ -181,6 +181,6 @@ $result2 = mysql_query($sql2);
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

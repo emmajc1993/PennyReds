@@ -1,17 +1,11 @@
 <?php
-session_start();
+$page_title = "New Event";
+$page_description = "Add a new event at Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
 	echo "";
 } else
 	header("Location: ../Users/fun.php");
-?>
-<?php
-$page_title = "New Event";
-$page_description = "Add a new event at Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
-?>
-
-<?php
  function renderForm($eventname, $eventdescription, $location, $date, $time, $error)
  {
  ?>
@@ -41,25 +35,26 @@ include ("../headerm.php");
         <form action="" method="POST">
 
           <fieldset>
-          	<input type="hidden" name="eventid"/>
+            <table>
+              	<input type="hidden" name="eventid"/>
 
-            <p><label for="eventname">Event Name</label></p>
-            <p><input type="text" name="eventname" value="<?php echo $eventname; ?>"/></p>
+                <tr><td><label for="eventname">Event Name</label></td><td>
+                <input type="text" name="eventname" value="<?php echo $eventname; ?>"/></td></tr>
 
-            <p><label for="eventdescription">Event Description</label></p>
-            <p style="background-color: white;" ><textarea name="eventdescription" id="eventdescription" rows="4" cols="30"><?php echo $eventdescription; ?></textarea></p>
+                <tr><td><label for="eventdescription">Event Description</label></td><td>
+                <p style="background-color: white;" ><textarea name="eventdescription" id="eventdescription" rows="4" cols="20"><?php echo $eventdescription; ?></textarea></td></tr>
 
-            <p><label for="location">Location</label></p>
-            <p><input type="text" name="location" value="<?php echo $location; ?>"/></p>
+                <tr><td><label for="location">Location</label></td><td>
+                <input type="text" name="location" value="<?php echo $location; ?>"/></td></tr>
 
-            <p><label for="date">Date</label></p>
-            <p><input type="date" name="date" value="<?php echo $date; ?>"/></p>
+                <tr><td><label for="date">Date</label></td><td>
+                <input type="date" name="date" value="<?php echo $date; ?>"/></td></tr>
 
-            <p><label for="time">Time</label></p>
-            <p><input type="time" name="time" value="<?php echo $time; ?>"/></p>
+                <tr><td><label for="time">Time</label></td><td>
+                <input type="time" name="time" value="<?php echo $time; ?>"/></td></tr>
 
-            <input type="submit" name="submit" value="New Event">
-
+                <tr><td><input type="submit" name="submit" value="New Event"></td></tr>
+            </table>
           </fieldset>
 
         </form>
@@ -69,18 +64,6 @@ include ("../headerm.php");
     </div>
  
  </form> 
- </body>
- 
-<div id="footer">
-                <ul>
-                    <li><a href="./AiW-Help.html">Help</a></li>
-                    <li><a href="./AiW-PrivacyCookies.html">Privacy &amp; Cookies</a></li>
-                    <li><a href="./AiW-Accessibility.html">Accessibility</a></li>
-                    <li><a href="./AiW-TermsOUse.html">Terms of Use</a></li>
-                </ul>
-            </div> <!-- End of footer -->
-    </body>
-</html>
  <?php 
  }
  
@@ -124,6 +107,6 @@ mysql_select_db("PennyReds") or die("Couldnt find the database");
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

@@ -6,18 +6,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
         <title><?php echo $page_title; ?></title>
-    <meta http-equiv="description" content="<?php echo $page_description; ?>" />
-    <meta charset="utf-8">
+        <meta http-equiv="description" content="<?php echo $page_description; ?>" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="../PR.css" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script src="js/main.js" type="text/javascript"></script>
     </head>
     <body>
-
-        <div class="mashmenu">
-            <div id="menuWrapper">   
 
             <?
                 if (($_SESSION["account_type"])=="Member") {

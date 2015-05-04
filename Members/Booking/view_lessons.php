@@ -1,18 +1,16 @@
 <?php
-session_start();
+$page_title = "View Lesson";
+$page_description = "View lesson booking for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if (($_SESSION['account_type'])=="Admin" OR ($_SESSION['account_type'])=="Staff") {
 	echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
-<?php
-$page_title = "View Lesson";
-$page_description = "View lesson booking for Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
+
 $lessonid = $_GET['lessonid'];
 ?>
 
-<p><a href="newbooking.php?lessonid=" . $lessonid . "">Add a new booking</a></p>
+<p><a href="newbooking.php?lessonid='" . $lessonid . "'">Add a new booking</a></p>
 
 <?php
 
@@ -71,8 +69,8 @@ for ($i = $start; $i < $end; $i++)
 	echo '<td>' . mysql_result($result, $i, 'horsename') . '</td>';
 	echo '<td>' . mysql_result($result, $i, 'additionaldetails') . '</td>';
 	echo '<td>' . mysql_result($result, $i, 'staffmember') . '</td>';
-	echo '<td><a href="editlesson.php?bookingid=' . mysql_result($result, $i, 'bookingid') . '">Edit</a></td>';
-	echo '<td><a href="deletebooking.php?bookingid=' . mysql_result($result, $i, 'bookingid') . '">Delete</a></td>';
+	echo '<td><a href="editlesson.php?bookingid=' . mysql_result($result, $i, 'bookingid') . '" style="background-color: white;">Edit</a></td>';
+	echo '<td><a href="deletebooking.php?bookingid=' . mysql_result($result, $i, 'bookingid') . '" style="background-color: white;">Delete</a></td>';
 	echo "</tr>"; 
 }
 	// close table>
@@ -83,6 +81,6 @@ echo "</table>";
 ?>
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

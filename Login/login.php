@@ -1,8 +1,9 @@
 <?php
-  $page_title = "Login";
-  $page_description = "Login page for Penny Red's Pony Parties Riding School in Cornwall.";
-  include ("headerl.php");
+$page_title = "Login";
+$page_description = "Login page for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("headerl.php");
 ?>
+<!-- Make the login box pop up -->
     <script type="text/javascript">
       <!--
           function toggle_visibility(id) {
@@ -14,7 +15,7 @@
           }
       //-->
     </script>
-
+<!-- Style the login box -->
     <style type="text/css">
 
       #popupBoxOnePosition{
@@ -42,10 +43,10 @@
             <fieldset>
               <?php if(isset($_GET["feedback1"])){echo $_GET["feedback1"];} ?>
 
-              <p><label for="username">Username</label></p>
+              <p><label for="username" style="background-color: #fee2b5">Username</label></p>
               <p><input type="text" name="username" id="username" placeholder="Username"></p>
 
-              <p><label for="password">Password</label></p>
+              <p><label for="password" style="background-color: #fee2b5">Password</label></p>
               <p><input type="password" name="password" id="password" placeholder="Password"></p>
 
               <input type="submit" value="Sign In">

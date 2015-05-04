@@ -1,6 +1,8 @@
 <?php
-
+$page_title = "Post Reply";
+$page_description = "Post a reply for the forum on Penny Red's Pony Parties Riding School in Cornwall.";
 include ('headerf.php');
+
 
 if ((!isset($_SESSION['username'])) || ($_GET['cid'] == "")) {
 	header("Location: start.php");

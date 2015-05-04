@@ -2,9 +2,8 @@
 $page_title = "Events";
 $page_description = "Events page for Penny Red's Pony Parties Riding School in Cornwall.";
 include ("../headerm.php");
-?>      
-<? 
 include('../connect-db.php');
+
 $per_page = 10;
 		// Work out number of pages needed
 if ($result = $mysqli->query("SELECT * FROM events ORDER BY date ASC"))
@@ -67,8 +66,8 @@ if ($result = $mysqli->query("SELECT * FROM events ORDER BY date ASC"))
 			echo '<td>' . $row[1] . '</td>';
 			echo '<td>' . $row[2] . '</td>';
 			echo '<td>' . $row[3] . '</td>';
-			echo '<td>' . $row[4] . '</td>';
-			echo '<td>' . $row[5] . '</td>';
+			echo '<td>' . strftime("%A %d %B, %Y",strtotime($row[4])) . '</td>';
+			echo '<td>' . strftime("%H:%M",strtotime($row[5])) . '</td>';
 			echo "</tr>";
 		}
 		echo "</table>";

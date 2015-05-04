@@ -1,11 +1,11 @@
 <?php
-
+$page_title = "Edit Horse";
+$page_description = "Edit a horse registered at Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
  function renderForm($horseid, $horsename, $height, $weight, $error)
  {
  ?>
- <?php 
-include ("../headerm.php");
-?>
+
 <?php
  if ($error != '')
  {
@@ -26,52 +26,59 @@ include ("../headerm.php");
         <form action="" method="POST">
 
           <fieldset>
-            <input type="hidden" name="horseid" value="<?php echo $horseid; ?>"/>
+            <table>
+              <input type="hidden" name="horseid" value="<?php echo $horseid; ?>"/>
 
-            <p><label for="horsename">Name</label></p>
-            <p><input type="text" name="horsename" value="<?php echo $horsename; ?>"/></p>
+              <tr><td><label for="horsename">Name</label></td><td>
+              <input type="text" name="horsename" value="<?php echo $horsename; ?>"/></td></tr>
 
-            <p><label for="height">Height (hh)</label></p>
-            <select name="height" value="<?php echo $height; ?>"/>
-                  <option value="12.0">12.0</option>
-                  <option value="12.1">12.1</option>
-                  <option value="12.2">12.2</option>
-                  <option value="12.3">12.3</option>
-                  <option value="13.0">13.0</option>
-                  <option value="13.1">13.1</option>
-                  <option value="13.2">13.2</option>
-                  <option value="13.3">13.3</option>
-                  <option value="14.0">14.0</option>
-                  <option value="14.1">14.1</option>
-                  <option value="14.2">14.2</option>
-                  <option value="14.3">14.3</option>
-                  <option value="15.0">15.0</option>
-                  <option value="15.1">15.1</option>
-                  <option value="15.2">15.2</option>
-                  <option value="15.3">15.3</option>
-                  <option value="16.0">16.0</option>
-                  <option value="16.1">16.1</option>
-                  <option value="16.2">16.2</option>
-                  <option value="16.3">16.3</option>
-                  <option value="17.0">17.0</option>
-                  <option value="17.1">17.1</option>
-                  <option value="17.2">17.2</option>
-                  <option value="17.3">17.3</option>
-                  <option value="18.0">18.0</option>
-                  <option value="18.1">18.1</option>
-                  <option value="18.2">18.2</option>
-                  <option value="18.3">18.3</option>
-                  <option value="19.0">19.0</option>
-                  <option value="19.1">19.1</option>
-                  <option value="19.2">19.2</option>
-                  <option value="19.3">19.3</option>
-                  <option value="20.0">20.0</option>
-                </select>
+              <tr><td><label for="height">Height (hh)</label></td><td>
+              <select name="height" value="<?php echo $height; ?>"/>
+                    <option value="12.0">12.0</option>
+                    <option value="12.1">12.1</option>
+                    <option value="12.2">12.2</option>
+                    <option value="12.3">12.3</option>
+                    <option value="13.0">13.0</option>
+                    <option value="13.1">13.1</option>
+                    <option value="13.2">13.2</option>
+                    <option value="13.3">13.3</option>
+                    <option value="14.0">14.0</option>
+                    <option value="14.1">14.1</option>
+                    <option value="14.2">14.2</option>
+                    <option value="14.3">14.3</option>
+                    <option value="15.0">15.0</option>
+                    <option value="15.1">15.1</option>
+                    <option value="15.2">15.2</option>
+                    <option value="15.3">15.3</option>
+                    <option value="16.0">16.0</option>
+                    <option value="16.1">16.1</option>
+                    <option value="16.2">16.2</option>
+                    <option value="16.3">16.3</option>
+                    <option value="17.0">17.0</option>
+                    <option value="17.1">17.1</option>
+                    <option value="17.2">17.2</option>
+                    <option value="17.3">17.3</option>
+                    <option value="18.0">18.0</option>
+                    <option value="18.1">18.1</option>
+                    <option value="18.2">18.2</option>
+                    <option value="18.3">18.3</option>
+                    <option value="19.0">19.0</option>
+                    <option value="19.1">19.1</option>
+                    <option value="19.2">19.2</option>
+                    <option value="19.3">19.3</option>
+                    <option value="20.0">20.0</option>
+                  </select></td></tr>
 
-            <p><label for="weight">Weight</label></p>
+              <tr><td><label for="weight">Weight</label></td><td>
+              <select name="weight" >
+                <option selected="selected" value="<?php echo $weight; ?>" > <?php echo $weight; ?> </option>
+                  <?php for ($i = 170; $i <= 720; $i++) : ?>
+                      <option value="<?php echo $weight; ?>"><?php echo $i; ?></option>
+                  <?php endfor; ?>
+              </select></td></tr>
 
-            <input type="submit" name="submit" value="Submit">
-
+              <tr><td><input type="submit" name="submit" value="Submit"></td></tr>
+            </table>
           </fieldset>
 
         </form>
@@ -171,6 +178,6 @@ mysql_select_db("PennyReds") or die("Couldnt find the database");
 
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

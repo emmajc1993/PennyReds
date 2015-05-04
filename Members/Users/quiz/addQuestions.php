@@ -147,10 +147,6 @@ if(isset($_POST['reset']) && $_POST['reset'] != ""){
 	}
 }
 ?>
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
 <title>Create A Quiz</title>
 <script>
 function showDiv(el1,el2){
@@ -269,6 +265,6 @@ document.getElementById("resetBtn").innerHTML = "processing...";
  </div>
 </body>
 <?php
-include ("footer.php");
+include ("../footer.html");
 ?>
 </html>

@@ -45,7 +45,7 @@ if(isset($_POST['qid']) && $_POST['qid'] != ""){
 require_once("scripts/connect_db.php");
 $response = ""; 
 	if(!isset($_SESSION['answer_array']) || count($_SESSION['answer_array']) < 1){
-		$response = "You have not answered any questions yet";
+		$response = "<p>You have not answered any questions yet! Click <a href='start.php'>here</a> to return to the start page!</p>";
 		echo $response;
 	exit();
 }else{
@@ -61,10 +61,10 @@ $response = "";
 		$percent = intval($percent);
 	if(isset($_POST['complete']) && $_POST['complete'] == "true"){
 		if(!isset($_POST['username']) || $_POST['username'] == ""){
-			echo "Sorry, We had an error";
+			echo "<p>Sorry, We had an error</p>";
 			exit();
 		}
-		echo "Thanks for taking the quiz! You scored $percent%";
+		echo "<p>Thanks for taking the quiz! You scored $percent%.</p>";
 		unset($_SESSION['answer_array']);
 		unset($_SESSION['qid_array']);
 		session_destroy();
@@ -74,6 +74,6 @@ $response = "";
 ?>
 </body>
 <?php
-include ("../../footer.html");
+include ("../footer.html");
 ?>
 </html>

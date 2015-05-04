@@ -1,15 +1,11 @@
 <?php
-session_start();
+$page_title = "Edit Information";
+$page_description = "Edit the website information for Penny Red's Pony Parties Riding School in Cornwall.";
+include ("../headerm.php");
 if(($_SESSION['account_type'])=="Admin") {
   echo "";
 } else
 header("Location: ../Users/fun.php");
-?>
-<?php
-$page_title = "Edit Information";
-$page_description = "Edit the website information for Penny Red's Pony Parties Riding School in Cornwall.";
-include ("../headerm.php");
-
 ?>
 
 <?
@@ -171,6 +167,6 @@ else
 
 </body>
 <?php
-include ("footer.php");
+include ("footer.html");
 ?>
 </html>

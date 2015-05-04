@@ -1,11 +1,13 @@
 <?php 
+$page_title = "Contact Form";
+$page_description = "Contact form for Penny Red's Pony Parties Riding School in Cornwall.";
 include ("./headerc.php");
 ?>
+<!-- This section checks that the required textfield does exist -->
 <?
 if (isset($_GET['u'])) {
 	$username = mysql_real_escape_string($_GET['u']);
 	if (ctype_alnum($username)) {
- 	//check user exists
 	$check = mysql_query("SELECT textfieldid, textfield FROM editinfo WHERE textfieldid='3'");
 	if (mysql_num_rows($check)===1) {
 	$get = mysql_fetch_assoc($check);
@@ -41,15 +43,17 @@ if (isset($_GET['u'])) {
 			<div class="pagecontent_contact_right_top">
 				<p class="header-text">Alternative Contact Infomation</p>
 					<p class="contact-head">Alternatively, you can get in contact with the following information.</p>
-					<p>Email: 				
+					<p>Email: 	
+					<!-- Here the textfield is echoed out onto the page -->			
 						<?php
-						  	$about_query = mysqli_query("SELECT textfield FROM editinfo WHERE textfieldid = '3'");
-							$get_result = mysqli_fetch_assoc($about_query);
+						  	$about_query = mysql_query("SELECT textfield FROM editinfo WHERE textfieldid = '3'");
+							$get_result = mysql_fetch_assoc($about_query);
 							$about_the_user = $get_result['textfield'];
 							echo $about_the_user;
 						?>
 					</p>
-					<p class="contact-head-2">Phone: 
+					<p class="contact-head-2">Phone:
+					<!-- Here the textfield is echoed out onto the page -->	 
 						<?
 						  	$about_query = mysql_query("SELECT textfield FROM editinfo WHERE textfieldid='4'");
 							$get_result = mysql_fetch_assoc($about_query);

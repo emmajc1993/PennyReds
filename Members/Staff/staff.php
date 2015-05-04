@@ -1,12 +1,11 @@
-<?php
-session_start();
-if(isset($_SESSION['username'])) {
-	echo "";
-} else
-header('Location: ../Mainsite/register.php');
-?>
 <?php 
+$page_title = "Staff Section";
+$page_description = "Staff section of Penny Red's Pony Parties Riding School in Cornwall.";
 include ("../headerm.php");
+if (($_SESSION['account_type'])=="Admin" OR ($_SESSION['account_type'])=="Staff") {
+  echo "";
+} else
+  header("Location: ../Users/fun.php");
 ?>
 				<div id="imageleft">
 					<a href="../Booking/index.php"><img src="../../images/viewlessons.jpg" alt=""></a>
@@ -25,6 +24,6 @@ include ("../headerm.php");
 				</div> <!-- EoF galleryItem -->
 			</body>
 <?php
-include ("footer.php");
+include ("../../footer.html");
 ?>
 </html>
